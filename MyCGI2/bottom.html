@@ -1,0 +1,1522 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <link href="tooltip.css" rel="stylesheet" type="text/css" />
+    <script src="tooltip.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="StyleSheet.css" />
+     
+    <style>
+    td:hover {
+    border: 3px solid #00ff90; 
+}
+    </style>
+</head>
+<body>
+     <table class="products" id="mother">
+        <tr>
+            <td><p>Products</p></td>
+        </tr>
+        <tr>
+            <td onmouseover="tooltip.ajax(this, 'mother.xml', myAjaxSetting, {position:0});"><img src="mm.png" onclick="readxml()" class="ii"/></td>
+            <td onmouseover="tooltip.ajax(this, 'mother.xml', myAjaxSettingM, {position:0});"><img src="jj.png" onclick="readxml2()" class="ii"/></td>
+            <td onmouseover="tooltip.ajax(this, 'mother.xml', myAjaxSettingk, {position:0});"><img src="key.png" onclick="readxml3()" class="ii"/></td>
+            <td onmouseover="tooltip.ajax(this, 'mother.xml', myAjaxSettingMO, {position:0});"><img src="tt.jpg"  onclick="readxml4()" class="ii"/></td>
+            <td onmouseover="tooltip.ajax(this, 'mother.xml', myAjaxSettingL, {position:0});"><img src="lap.jpg" onclick="readxml5()" class="ii"/></td>
+        </tr>
+    </table>
+
+    <table class="brands" id="bb">   
+         <tr>
+            <td><p>Brands</p></td>
+        </tr>     
+        <tr>
+            <td><img src="app.png" onclick="readxmlApp()" class="logo" /></td>
+            <td><img src="rog.png" onclick="readxmlROG()" class="logo" /></td>
+            <td><img src="logi.png" onclick="readxmlLog()" class="logo" /></td>
+            <td><img src="razer.png" onclick="readxmlRaz()" class="logo" /></td>
+            <td><img src="dell.png" onclick="readxmlDell()" class="logo" /></td>
+            <td><img src="HP-logo.png"  onclick="readxmlhp()" class="logo" /></td>
+        </tr>
+    </table>
+
+
+     <script>
+//===================Motherboards=================================
+         function readxml() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     write(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+         function write(xml) {
+             var file = "mother.xml";
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='bottom.html'>back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Motherboard")) {
+                     c++;
+                     txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"><img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c % 5 == 0) { break; }
+                 }
+
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Motherboard")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Motherboard")) { break; }
+                         txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("mother").innerHTML = txt;
+         }
+
+
+//===========================Mouse========================================
+         function readxml2() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writeM(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+         function writeM(xml) {
+            var file = "mother.xml";
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='bottom.html' >back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Mouse")) {
+                     c++;
+                     txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+
+             if (c == 5) {
+                 if (x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Mouse")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Mouse")) { break; }
+                         txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("mother").innerHTML = txt;
+         }
+
+
+//========================Keyboards===============================
+         function readxml3() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writeK(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+         function writeK(xml) {
+            var file = "mother.xml";
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='bottom.html'>back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Keyboard")) {
+                     c++;
+                     txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Keyboard")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Keyboard")) { break; }
+                         txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("mother").innerHTML = txt;
+         }
+
+
+
+//==============================Monitors======================================
+         function readxml4() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writeMM(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+         function writeMM(xml) {
+            var file = "mother.xml";
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='bottom.html' >back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Monitor")) {
+                     c++;
+                     txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Monitor")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Monitor")) { break; }
+                         txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("mother").innerHTML = txt;
+         }
+
+
+
+//==========================Laptop==========================================
+         function readxml5() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writeL(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+         function writeL(xml) {
+            var file = "mother.xml";
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='bottom.html' >back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Laptop")) {
+                     c++;
+                     txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Laptop")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("cat")[0].childNodes[0].nodeValue.includes("Laptop")) { break; }
+                         txt += "<td onmouseover='tooltip.ajax(this,"+'"' + file +'"'+", myAjaxSettingProd"+String(i)+", {position:0});'" +"> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("mother").innerHTML = txt;
+         }
+
+
+
+         //-----------Logo-------------------
+
+         function readxmlApp() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writeApp(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+
+         function writeApp(xml) {
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='.' target='_top'>back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Apple")) {
+                     c++;
+                     txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Apple")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Apple")) { break; }
+                         txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("bb").innerHTML = txt;
+         }
+
+         function readxmlROG() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writerog(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+
+         function writerog(xml) {
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='.' target='_top'>back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("ROG")) {
+                     c++;
+                     txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("ROG")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("ROG")) { break; }
+                         txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("bb").innerHTML = txt;
+         }
+
+
+         function readxmlLog() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writelog(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+
+         function writelog(xml) {
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='.' target='_top'>back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Logitech")) {
+                     c++;
+                     txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Logitech")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Logitech")) { break; }
+                         txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("bb").innerHTML = txt;
+         }
+
+
+
+         function readxmlRaz() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writeraz(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+
+         function writeraz(xml) {
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='bottom.html' >back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Razer")) {
+                     c++;
+                     txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Razer")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Razer")) { break; }
+                         txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("bb").innerHTML = txt;
+         }
+
+
+         function readxmlDell() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writedd(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+
+         function writedd(xml) {
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='.' target='_top'>back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Dell")) {
+                     c++;
+                     txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Dell")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("Dell")) { break; }
+                         txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("bb").innerHTML = txt;
+         }
+
+
+
+         function readxmlhp() {
+             var xmlhttp = new XMLHttpRequest();
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     writehp(this);
+
+                 }
+             }
+             xmlhttp.open("GET", "mother.xml", true);
+             xmlhttp.send();
+         }
+
+
+         function writehp(xml) {
+             var x, i, xmlDoc, txt;
+             var c = 0;
+             var cc = 0;
+             xmlDoc = xml.responseXML;
+             txt = "";
+             x = xmlDoc.getElementsByTagName("product");
+             txt += "<tr><td><a href='.' target='_top'>back</a></td></tr>";
+             txt += "<tr>";
+             for (i = 0; i < x.length; i++) {
+                 cc++;
+                 if (x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("hp")) {
+                     c++;
+                     txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     if (c == 5) { console.log(cc); break; }
+                 }
+             }
+
+             txt += "</tr>";
+             if (c == 5) {
+                 if (x[cc].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("hp")) {
+                     txt += "<tr>";
+                     for (i = cc; i < x.length; i++) {
+                         if (!x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.includes("hp")) { break; }
+                         txt += "<td> <img src = '" + x[i].getElementsByTagName("pic")[0].childNodes[0].nodeValue + "' class='ii'/><br>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<br>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + "<br>" + "</td>";
+                     }
+                 }
+                 txt += "</tr>";
+
+             }
+             document.getElementById("bb").innerHTML = txt;
+         }
+
+
+
+         //Tooltips
+
+         var myAjaxSetting = {
+             context: { index: -1 },
+             success: myCallback,
+             responseType: "xml"
+         };
+
+         function myCallback(response, context) {
+             var all;
+             var x = response.documentElement.getElementsByTagName("product")[0];
+             var pics = x.getElementsByTagName("pic")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var name = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var s = "<p style='float:left;color:red;'>SPECIAL OFFER!!</p><br/>";
+             var n = "<p style='position:absolute;left:0px;top:20px'>" + cat + "</p><br/>";
+             var c = "<p style='position:relative;top:5px;left:0px;'>" + name + "</p><br/>";
+             var p = "<p style='float:left;'> Price: $" + price + "<p style='float:left;color:red;'> -20%</p></p>";
+             var image = "<img src=' " + pics + "' style='float:right;margin-left:12px;width:75px;height:75px;' />";
+
+             return "<div>" + image + s + n + c + p + "</div>";
+
+
+         }
+
+         var myAjaxSettingM = {
+             context: { index: -1 },
+             success: myCallbackM,
+             responseType: "xml"
+         };
+
+         function myCallbackM(response, context) {
+             var x = response.documentElement.getElementsByTagName("product")[20];
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var name = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var pics = x.getElementsByTagName("pic")[0].childNodes[0].nodeValue;
+             var s = "<p style='float:left;color:red;'>SPECIAL OFFER!!</p><br/>";
+             var n = "<p style='position:absolute;left:0px;top:20px'>" + cat + "</p><br/>";
+             var c = "<p style='position:relative;top:5px;left:0px;'>" + name + "</p><br/>";
+             var p = "<p style='float:left;'> Price: $" + price + "<p style='float:left;color:red;'> -20%</p></p>";
+             var image = "<img src=' " + pics + "' style='float:right;margin-left:12px;width:75px;height:75px;' />";
+
+             return "<div>" + image + s + n + c + p + "</div>";
+
+
+         }
+
+
+         var myAjaxSettingk = {
+             context: { index: -1 },
+             success: myCallbackK,
+             responseType: "xml"
+         };
+
+         function myCallbackK(response, context) {
+             var x = response.documentElement.getElementsByTagName("product")[16];
+             var pics = x.getElementsByTagName("pic")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var name = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var s = "<p style='float:left;color:red;'>SPECIAL OFFER!!</p><br/>";
+             var n = "<p style='position:absolute;left:0px;top:20px'>" + cat + "</p><br/>";
+             var c = "<p style='position:relative;top:5px;left:0px;'>" + name + "</p><br/>";
+             var p = "<p style='float:left;'> Price: $" + price + "<p style='float:left;color:red;'> -20%</p></p>";
+             var image = "<img src=' " + pics + "' style='float:right;margin-left:12px;width:75px;height:75px;' />";
+
+             return "<div>" + image + s + n + c + p + "</div>";
+
+
+         }
+
+
+         var myAjaxSettingMO = {
+             context: { index: -1 },
+             success: myCallbackMO,
+             responseType: "xml"
+         };
+
+         function myCallbackMO(response, context) {
+             var x = response.documentElement.getElementsByTagName("product")[30];
+             var pics = x.getElementsByTagName("pic")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var name = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var s = "<p style='float:left;color:red;'>SPECIAL OFFER!!</p><br/>";
+             var n = "<p style='position:absolute;left:0px;top:20px'>" + cat + "</p><br/>";
+             var c = "<p style='position:relative;top:5px;left:0px;'>" + name + "</p><br/>";
+             var p = "<p style='float:left;'> Price: $" + price + "<p style='float:left;color:red;'> -20%</p></p>";
+             var image = "<img src=' " + pics + "' style='float:right;margin-left:12px;width:75px;height:75px;' />";
+
+             return "<div>" + image + s + n + c + p + "</div>";
+
+
+         }
+
+
+         var myAjaxSettingL = {
+             context: { index: -1 },
+             success: myCallbackL,
+             responseType: "xml"
+         };
+
+         function myCallbackL(response, context) {
+             var x = response.documentElement.getElementsByTagName("product")[11];
+             var pics = x.getElementsByTagName("pic")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var name = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var s = "<p style='float:left;color:red;'>SPECIAL OFFER!!</p><br/>";
+             var n = "<p style='position:absolute;left:0px;top:20px'>" + cat + "</p><br/>";
+             var c = "<p style='position:relative;top:5px;left:0px;'>" + name + "</p><br/>";
+             var p = "<p style='float:left;'> Price: $" + price + "<p style='float:left;color:red;'> -20%</p></p>";
+             var image = "<img src=' " + pics + "' style='float:right;margin-left:12px;width:75px;height:75px;' />";
+
+             return "<div>" + image + s + n + c + p + "</div>";
+
+         }
+
+
+
+        //-----------tooltip mother 1----------------------
+             var myAjaxSettingProd0 = {
+             context: { index: -1 },
+             success: myCallbackProd0,
+             responseType: "xml"
+         };
+
+         function myCallbackProd0(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[0];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"' method='POST'> <br> <input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available <br> <input type=submit value='add to cart'/> </form>";
+                console.log(all);
+                console.log(pname);
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //====================2=======================
+         var myAjaxSettingProd1 = {
+             context: { index: -1 },
+             success: myCallbackProd1,
+             responseType: "xml"
+         };
+
+         function myCallbackProd1(response, context) {
+             var all;
+             var x = response.documentElement.getElementsByTagName("product")[1];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //--------------3rd Prod-----------------------
+
+         var myAjaxSettingProd2 = {
+             context: { index: -1 },
+             success: myCallbackProd2,
+             responseType: "xml"
+         };
+
+         function myCallbackProd2(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[2];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //---------------4th Prod---------------------
+
+         var myAjaxSettingProd3 = {
+             context: { index: -1 },
+             success: myCallbackProd3,
+             responseType: "xml"
+         };
+
+         function myCallbackProd3(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[3];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //--------------------5th Prod-----------------------
+
+         var myAjaxSettingProd4 = {
+             context: { index: -1 },
+             success: myCallbackProd4,
+             responseType: "xml"
+         };
+
+         function myCallbackProd4(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[4];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+
+         //===============================6=====================================
+         var myAjaxSettingProd5 = {
+             context: { index: -1 },
+             success: myCallbackProd5,
+             responseType: "xml"
+         };
+
+         function myCallbackProd5(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[5];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //======================7=======================
+
+         var myAjaxSettingProd6 = {
+             context: { index: -1 },
+             success: myCallbackProd6,
+             responseType: "xml"
+         };
+
+         function myCallbackProd6(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[6];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+
+//====================8====================================
+         var myAjaxSettingProd7 = {
+             context: { index: -1 },
+             success: myCallbackProd7,
+             responseType: "xml"
+         };
+
+         function myCallbackProd7(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[7];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         
+//==========================9==========================
+
+        var myAjaxSettingProd8 = {
+             context: { index: -1 },
+             success: myCallbackProd8,
+             responseType: "xml"
+         };
+
+         function myCallbackProd8(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[8];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //==========================10===========================
+
+         var myAjaxSettingProd9 = {
+             context: { index: -1 },
+             success: myCallbackProd9,
+             responseType: "xml"
+         };
+
+         function myCallbackProd9(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[9];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //=================================11====================================
+
+         var myAjaxSettingProd10 = {
+             context: { index: -1 },
+             success: myCallbackProd10,
+             responseType: "xml"
+         };
+
+         function myCallbackProd10(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[10];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //=================================12=================================
+         var myAjaxSettingProd11 = {
+             context: { index: -1 },
+             success: myCallbackProd11,
+             responseType: "xml"
+         };
+
+         function myCallbackProd11(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[11];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //==================================13===================================
+         var myAjaxSettingProd12 = {
+             context: { index: -1 },
+             success: myCallbackProd12,
+             responseType: "xml"
+         };
+
+         function myCallbackProd12(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[12];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //======================================14====================================
+         var myAjaxSettingProd13 = {
+             context: { index: -1 },
+             success: myCallbackProd13,
+             responseType: "xml"
+         };
+
+         function myCallbackProd13(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[13];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //=======================================15========================================
+         var myAjaxSettingProd14 = {
+             context: { index: -1 },
+             success: myCallbackProd14,
+             responseType: "xml"
+         };
+
+         function myCallbackProd14(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[14];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //=================================16====================================
+         var myAjaxSettingProd15 = {
+             context: { index: -1 },
+             success: myCallbackProd15,
+             responseType: "xml"
+         };
+
+         function myCallbackProd15(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[15];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //=================================17================================
+         var myAjaxSettingProd16 = {
+             context: { index: -1 },
+             success: myCallbackProd16,
+             responseType: "xml"
+         };
+
+         function myCallbackProd16(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[16];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //===================================18=======================================
+         var myAjaxSettingProd17 = {
+             context: { index: -1 },
+             success: myCallbackProd17,
+             responseType: "xml"
+         };
+
+         function myCallbackProd17(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[17];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //===================================19=========================================
+         var myAjaxSettingProd18 = {
+             context: { index: -1 },
+             success: myCallbackProd18,
+             responseType: "xml"
+         };
+
+         function myCallbackProd18(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[18];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //=============================================20==========================================
+         var myAjaxSettingProd19 = {
+             context: { index: -1 },
+             success: myCallbackProd19,
+             responseType: "xml"
+         };
+
+         function myCallbackProd19(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[19];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //==================================21===============================
+         var myAjaxSettingProd20 = {
+             context: { index: -1 },
+             success: myCallbackProd20,
+             responseType: "xml"
+         };
+
+         function myCallbackProd20(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[20];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //=======================================22=====================================
+         var myAjaxSettingProd21 = {
+             context: { index: -1 },
+             success: myCallbackProd21,
+             responseType: "xml"
+         };
+
+         function myCallbackProd21(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[21];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+        //===================================23===============================
+        var myAjaxSettingProd22 = {
+             context: { index: -1 },
+             success: myCallbackProd22,
+             responseType: "xml"
+         };
+
+         function myCallbackProd22(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[22];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //====================================24=====================================
+         var myAjaxSettingProd23 = {
+             context: { index: -1 },
+             success: myCallbackProd23,
+             responseType: "xml"
+         };
+
+         function myCallbackProd23(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[23];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //==================================================25=====================================
+         var myAjaxSettingProd24 = {
+             context: { index: -1 },
+             success: myCallbackProd24,
+             responseType: "xml"
+         };
+
+         function myCallbackProd24(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[24];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //====================================================26===================================
+         var myAjaxSettingProd25 = {
+             context: { index: -1 },
+             success: myCallbackProd25,
+             responseType: "xml"
+         };
+
+         function myCallbackProd25(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[25];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //================================27=======================================
+         var myAjaxSettingProd26 = {
+             context: { index: -1 },
+             success: myCallbackProd26,
+             responseType: "xml"
+         };
+
+         function myCallbackProd26(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[26];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //================================================28==================================
+         var myAjaxSettingProd27 = {
+             context: { index: -1 },
+             success: myCallbackProd27,
+             responseType: "xml"
+         };
+
+         function myCallbackProd27(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[27];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+         //=============================================29=======================================
+         var myAjaxSettingProd28 = {
+             context: { index: -1 },
+             success: myCallbackProd28,
+             responseType: "xml"
+         };
+
+         function myCallbackProd28(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[28];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //=======================================30===============================================
+         var myAjaxSettingProd29 = {
+             context: { index: -1 },
+             success: myCallbackProd29,
+             responseType: "xml"
+         };
+
+         function myCallbackProd29(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[29];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //===============================================31======================================
+         var myAjaxSettingProd30 = {
+             context: { index: -1 },
+             success: myCallbackProd30,
+             responseType: "xml"
+         };
+
+         function myCallbackProd30(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[30];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //======================================================32====================================
+         var myAjaxSettingProd31 = {
+             context: { index: -1 },
+             success: myCallbackProd31,
+             responseType: "xml"
+         };
+
+         function myCallbackProd31(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[31];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+         //=============================================33=======================================
+         var myAjaxSettingProd32 = {
+             context: { index: -1 },
+             success: myCallbackProd32,
+             responseType: "xml"
+         };
+
+         function myCallbackProd32(response, context) {
+            var all;
+             var x = response.documentElement.getElementsByTagName("product")[32];
+             var pid = x.getElementsByTagName("pid")[0].childNodes[0].nodeValue;
+             var cat = x.getElementsByTagName("cat")[0].childNodes[0].nodeValue;
+             var pname = x.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+             var price = x.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+             var tity =  x.getElementsByTagName("quan")[0].childNodes[0].nodeValue;
+             if (tity >= 1){
+                all="<form action='addcart.py?price="+price+"&cat= "+cat+"&pname="+pname+"&pid="+pid+"&tity="+tity+"' method='POST'><br><input type='number' value=1 id='quantity' name ='quantity' min='1' max='"+tity+"' />" + tity + " piece available<br><input type=submit value='add to cart' /></form>";
+
+             } else{
+                 all="<font color=red>Out of Stock</font>"
+             }
+             return all;
+
+         }
+
+
+
+    </script>
+</body>
+</html>

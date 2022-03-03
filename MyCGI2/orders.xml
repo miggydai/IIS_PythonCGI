@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<order>
+  <customer>
+    <cid>2</cid>
+    <pid>2</pid>
+    <cat>Motherboard</cat>
+    <name>ROG Motherboard</name>
+    <price>2,000</price>
+    <quan>3</quan>
+    <date>12/12/2021</date>
+    <status>served</status>
+  </customer>
+  
+<customer><cid>3</cid><pid>1</pid><cat> Motherboard</cat><name>hp Motherboard</name><price>2,000</price><quan>4</quan><date>2021-10-22</date><status>served</status></customer><customer><cid>2</cid><pid>4</pid><cat> Motherboard</cat><name>Normal Motherboard</name><price>2,100</price><quan>6</quan><date>2021-10-22</date><status>served</status></customer><customer><cid>2</cid><pid>1</pid><cat> Motherboard</cat><name>hp Motherboard</name><price>2,000</price><quan>1</quan><date>2021-10-22</date><status>pending</status></customer><customer><cid>3</cid><pid>2</pid><cat> Motherboard</cat><name>ROG Motherboard</name><price>2,000</price><quan>3</quan><date>2021-10-22</date><status>pending</status></customer><customer><cid>2</cid><pid>15</pid><cat> Mouse</cat><name>Logitech Mouse</name><price>1,500</price><quan>1</quan><date>2021-10-23</date><status>pending</status></customer><customer><cid>2</cid><pid>10</pid><cat> Keyboard</cat><name>Mechanical keyboard</name><price>4,500</price><quan>1</quan><date>2021-10-23</date><status>served</status></customer><customer><cid>3</cid><pid>12</pid><cat> Mouse</cat><name>Logitech Mouse</name><price>2,500</price><quan>1</quan><date>2021-10-23</date><status>pending</status></customer><customer><cid>3</cid><pid>12</pid><cat> Mouse</cat><name>Mouse</name><price>2,000</price><quan>2</quan><date>2021-10-25</date><status>pending</status></customer><customer><cid>3</cid><pid>10</pid><cat> Keyboard</cat><name>Gaming keyboard</name><price>2,500</price><quan>2</quan><date>2021-10-25</date><status>pending</status></customer><customer><cid>2</cid><pid>2</pid><cat> Motherboard</cat><name>ROG Motherboard</name><price>2,000</price><quan>1</quan><date>2021-10-27</date><status>served</status></customer><customer><cid>2</cid><pid>3</pid><cat> Motherboard</cat><name>Motherboard</name><price>1,000</price><quan>2</quan><date>2021-10-27</date><status>served</status></customer><customer><cid>2</cid><pid>10</pid><cat> Keyboard</cat><name>Mechanical keyboard</name><price>4,500</price><quan>1</quan><date>2021-10-27</date><status>served</status></customer><customer><cid>2</cid><pid>66</pid><cat> Keyboard</cat><name>Apple keyboard</name><price>6,500</price><quan>1</quan><date>2021-10-27</date><status>served</status></customer><customer><cid>3</cid><pid>20</pid><cat> Monitor</cat><name>hp Monitor</name><price>7,100</price><quan>1</quan><date>2021-10-27</date><status>served</status></customer><customer><cid>3</cid><pid>9</pid><cat> Laptop</cat><name>Apple Laptop</name><price>29,500</price><quan>1</quan><date>2021-10-27</date><status>served</status></customer></order>

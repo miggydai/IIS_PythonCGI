@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <script type ="text/javascript">
+
+        function openWin(){
+            myWindow = window.open('http://127.0.0.1:8080/login','name','width=600,height=600')
+
+        }
+         
+        function check() {
+            var user = document.getElementById("user").value;
+            var pass = document.getElementById("pass").value;
+
+            if (user == "") {
+                alert("Invalid!!");
+            } else if (pass == "") {
+                alert("Invalid!!");
+            } else {
+                alert("Welcome");
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="login">
+        <p class="log">Login</p>
+        <div class="user"><input type="text" class="a" name="name"  id="user"/><label>username</label></div>
+         <div class="password"><input type="text" class="a" name ="pass" id="pass" /><label>password</label></div>
+        <div id="sign"><p>New Here?</p> <a href="signin.py" class="links" target="B">Sign up</a></div>
+        <div class="gmail"><img src="google-signin-button.png"  onclick=openWin()> </div>
+        <div class="buts"><button onclick ="check()" id="submit">Login</button></div>
+    </div>
+</body>
+</html>

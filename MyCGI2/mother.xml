@@ -1,0 +1,333 @@
+<stocks>
+  <product>
+    <pid>1</pid>
+    <cat>Motherboard</cat>
+    <name>hp Motherboard</name>
+    <pic>m1.jpg</pic>
+    <price>2,000</price>
+    <quan>20</quan>
+    <date>12/12/2021</date>
+  </product>
+  
+  <product>
+    <pid>2</pid>
+    <cat>Motherboard</cat>
+    <name>ROG Motherboard</name>
+    <pic>m1.jpg</pic>
+    <price>2,000</price>
+    <quan>21</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>3</pid>
+    <name>Motherboard</name>
+    <cat>Motherboard</cat>
+    <pic>m2.jpg</pic>
+    <price>1,000</price>
+    <quan>20</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>4</pid>
+    <name>Red Motherboard</name>
+    <cat>Motherboard</cat>
+    <pic>m3.jpg</pic>
+    <price>2,500</price>
+    <quan>59</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>4</pid>
+    <name>Normal Motherboard</name>
+    <cat>Motherboard</cat>
+    <pic>mo.jpg</pic>
+    <price>2,100</price>
+    <quan>19</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>4</pid>
+    <name>Normal Motherboard</name>
+    <cat>Motherboard</cat>
+    <pic>moth.jpg</pic>
+    <price>1,500</price>
+    <quan>14</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>5</pid>
+    <name>Basic Motherboard</name>
+    <cat>Motherboard</cat>
+    <pic>moth.jpg</pic>
+    <price>1,500</price>
+    <quan>29</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>6</pid>
+    <name>Motherboard</name>
+    <cat>Motherboard</cat>
+    <pic>m3.jpg</pic>
+    <price>2,500</price>
+    <quan>24</quan>
+    <date>12/12/2021</date>
+  </product>
+
+
+
+  <product>
+    <pid>7</pid>
+    <name>ROG Laptop</name>
+    <cat>Laptop</cat>
+    <pic>l3.png</pic>
+    <price>26,000</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>7</pid>
+    <name>ROG Laptop</name>
+    <cat>Laptop</cat>
+    <pic>g4.jpg</pic>
+    <price>15,000</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>4</pid>
+    <name>ROG Laptop</name>
+    <cat>Laptop</cat>
+    <pic>g5.jpg</pic>
+    <price>9,500</price>
+    <quan>-4</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>8</pid>
+    <name>hp Laptop</name>
+    <cat>Laptop</cat>
+    <pic>l2.jpg</pic>
+    <price>19,500</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>9</pid>
+    <name>Apple Laptop</name>
+    <cat>Laptop</cat>
+    <pic>l1.jpg</pic>
+    <price>29,500</price>
+    <quan>1</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>9</pid>
+    <name>Apple Laptop</name>
+    <cat>Laptop</cat>
+    <pic>l1.jpg</pic>
+    <price>29,500</price>
+    <quan>1</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>10</pid>
+    <name>Gaming keyboard</name>
+    <cat>Keyboard</cat>
+    <pic>k1.jpg</pic>
+    <price>2,500</price>
+    <quan>-2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>10</pid>
+    <name>Mechanical keyboard</name>
+    <cat>Keyboard</cat>
+    <pic>k2.jpg</pic>
+    <price>4,000</price>
+    <quan>-2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>10</pid>
+    <name>Mechanical keyboard</name>
+    <cat>Keyboard</cat>
+    <pic>k3.png</pic>
+    <price>4,500</price>
+    <quan>-2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>10</pid>
+    <name>Mechanical keyboard</name>
+    <cat>Keyboard</cat>
+    <pic>k5.jpg</pic>
+    <price>3,100</price>
+    <quan>-2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>66</pid>
+    <name>Apple keyboard</name>
+    <cat>Keyboard</cat>
+    <pic>l4.jpg</pic>
+    <price>6,500</price>
+    <quan>1</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>11</pid>
+    <name>Apple keyboard</name>
+    <cat>Keyboard</cat>
+    <pic>l4.jpg</pic>
+    <price>6,500</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>12</pid>
+    <name>Mouse</name>
+    <cat>Mouse</cat>
+    <pic>aa.png</pic>
+    <price>2,000</price>
+    <quan>-1</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>13</pid>
+    <name>Logitech Mouse</name>
+    <cat>Mouse</cat>
+    <pic>aa2.jpg</pic>
+    <price>2,500</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>12</pid>
+    <name>Logitech Mouse</name>
+    <cat>Mouse</cat>
+    <pic>aa3.png</pic>
+    <price>2,500</price>
+    <quan>-1</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>14</pid>
+    <name>Razer Mouse</name>
+    <cat>Mouse</cat>
+    <pic>m4.jpg</pic>
+    <price>2,100</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>15</pid>
+    <name>Logitech Mouse</name>
+    <cat>Mouse</cat>
+    <pic>m5.jpg</pic>
+    <price>1,500</price>
+    <quan>32</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>16</pid>
+    <name>Razer Mouse</name>
+    <cat>Mouse</cat>
+    <pic>m4.jpg</pic>
+    <price>2,100</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>16</pid>
+    <name>Logitech Mouse</name>
+    <cat>Mouse</cat>
+    <pic>m5.jpg</pic>
+    <price>1,500</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>17</pid>
+    <name>Dell Monitor</name>
+    <cat>Monitor</cat>
+    <pic>c1.jpg</pic>
+    <price>2,000</price>
+    <quan>43</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>18</pid>
+    <name>Dell Monitor</name>
+    <cat>Monitor</cat>
+    <pic>c2.jpg</pic>
+    <price>5,000</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>19</pid>
+    <name>Monitor</name>
+    <cat>Monitor</cat>
+    <pic>c3.jpg</pic>
+    <price>5,500</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>20</pid>
+    <name>hp Monitor</name>
+    <cat>Monitor</cat>
+    <pic>mi4.jpg</pic>
+    <price>7,100</price>
+    <quan>3</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>21</pid>
+    <name>Dell Monitor</name>
+    <cat>Monitor</cat>
+    <pic>mi5.jpg</pic>
+    <price>3,500</price>
+    <quan>2</quan>
+    <date>12/12/2021</date>
+  </product>
+
+  <product>
+    <pid>22</pid>
+    <name>hp Monitor</name>
+    <cat>Monitor</cat>
+    <pic>mi4.jpg</pic>
+    <price>7,100</price>
+    <quan>4</quan>
+    <date>12/12/2021</date>
+  </product>
+<product><pid>45</pid><cat>Laptop</cat><name>ROG laps</name><pic>1bruh.jpg</pic><price>20,000</price><quan>7</quan><date>2021-10-26</date></product><product><pid>46</pid><name>ROG laptop</name><cat>Laptop</cat><pic>2021-02-19 02.48.57 www.google.com 35b003d84b6c.jpg</pic><price>20,000</price><quan>7</quan><date>2021-10-28</date></product></stocks>

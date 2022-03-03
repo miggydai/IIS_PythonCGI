@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <script type="text/javascript">
+
+        function chk() {
+            var phone = document.getElementById("p").value;
+            var email = document.getElementById("E").value;
+            var passw = document.getElementById("pis").value;
+
+            if (phone == "") {
+                alert("Invalid!");
+            } else if (email == "") {
+                alert("Invalid!");
+            } else if (passw == "") {
+                alert("Invalid!");
+            } else {
+                alert("Welcome!!");
+            }
+
+        }
+    </script>
+</head>
+<body>
+     <div class="login">
+        <p class="log">Sign Up</p>
+        <div class="user"><input type="text" class="a" id="p" name="number"/><label>Phone #</label></div>
+        <div class="password"><input type="text" class="a" id="E" name="mail"/><label>Email</label></div>
+        <div class="new"><input type="text" class="a" id="pis"/><label>Password</label></div>
+        <div class="buts"><button onclick="chk()">Sign In</button></div>
+    </div>
+</body>
+</html>

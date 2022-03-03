@@ -1,0 +1,326 @@
+﻿
+.header {
+            position:fixed;
+            border: 3px solid #00ff90;
+            top:10px;
+            width:98%;
+            height:200px;
+            border-radius:9px;
+            border-spacing:5px;
+            background:repeating-linear-gradient(90deg,white 0%, green 100%);
+            opacity:0.9;
+}
+
+.content {
+    position:relative;
+    border:3px;
+    top:250px;
+     width:100%;
+     height:200%;
+     border-radius:9px;
+     border-spacing:5px;
+}
+
+#link {
+            position:absolute;
+            left:10px;
+            top:20px;           
+}
+.prof{
+    position:absolute;
+    right:10px;
+    top:20px;
+    width:10px;
+    height:10px;  
+
+}
+.links {
+            color:green;
+            text-decoration:none;
+        }
+.center {
+            position:relative;
+            left:30%;
+            top:50%;
+
+        }
+
+.right {
+            position:relative;
+            width:100px;
+            height:100px;
+            right:0px;
+            left:85%;
+            bottom:70px;
+
+
+        }
+
+ #image {
+            position:relative;
+            width:100px;
+            height:100px;
+            top:40px;
+            left:20px;
+        }
+
+label {
+            position:absolute;
+            width:55%;
+            left:0px;
+            top:5px;
+            color:#BCB5B5;
+            transition:0.10s;
+}
+
+ input {
+            height:30px;
+            width:45%;
+            border:0;
+            outline:0;
+            padding:0px;
+            border-bottom:1px solid #00ff90;
+}
+
+ input:focus, input:valid {
+         border-color:#00dd22;
+}
+
+input:focus ~ label, input:valid {
+            font-size:15px;
+            top:-25px;
+            color:#00dd22;
+            }
+.products {  
+    position:relative;
+    border:3px solid #0A0A0A;
+    margin-left:auto;
+    margin-right:auto;
+     border-radius:9px;
+     border-spacing:5px;
+    top: 0px;
+}
+
+.ii{
+            height:180px;
+            width:220px;
+            padding:1px;
+            transition: transform .2s;
+
+        }
+
+.brands {
+    position:relative;
+    border:3px solid #0A0A0A;
+    margin-left:auto;
+    margin-right:auto;
+    top:300px;
+    border-radius:9px;
+    border-spacing:5px;
+
+}
+
+.logo {
+            height:100px;
+            width:150px;
+            padding:2px;
+            transition: transform .2s;
+
+        }
+p {
+     left:20%;
+     font-family: Arial, Helvetica, sans-serif,bold;
+}
+
+.stock {
+    position: relative;
+    border:3px solid #00ff90;
+    top:0px;
+    width:100%;
+    height:900px;
+    border-radius:9px;
+    border-spacing:5px;
+    background:repeating-linear-gradient(90deg,white 0%, green 100%);
+
+}
+
+.log {
+    position:absolute;
+    left:10%;
+
+}
+
+#pid {
+    position:absolute;
+    top:10%;
+    left:10%;
+}
+
+#category {
+    position:absolute;
+    top:20%;
+    left:10%;
+}
+.prod {
+    position:absolute;
+    top:30%;
+    left:10%;
+}
+
+.prodi{
+    position:absolute;
+    top:40%;
+    left:10%;
+
+}
+.last {
+    position:absolute;
+    top:50%;
+    left:10%;
+}
+
+.file {
+    position:absolute;
+    top:60%;
+    left:10%;
+}
+.submit {
+     position:absolute;
+    top:80%;
+    left:34%;
+    width: 87px;
+    height: 39px;
+}
+
+input.a {
+            height:35px;
+            width:100%;
+            border:0;
+            outline:0;
+            padding:0px;
+            border-bottom:1px solid #00ff90;
+}
+
+.stonks {
+    position:relative;
+    width:45%;
+   border: 3px solid;
+    border-radius:9px;
+    border-spacing:5px;
+    margin-top: auto;
+    margin-left:auto;
+    margin-right:auto;
+    left: 289px;
+    top: 5px;
+}
+
+tr.g {
+    background:repeating-linear-gradient(90deg,white 0%, green 100%);
+}
+
+.login {
+    position: relative;
+    border:3px solid #00ff90;
+    top:0px;
+    width:20%;
+    height:400px;
+    left:70%;
+    border-radius:9px;
+    border-spacing:5px;
+    background:repeating-linear-gradient(90deg,white 0%, green 100%);
+
+}
+
+.signin{
+    position: relative;
+    border:3px solid #00ff90;
+    top:0px;
+    width:20%;
+    height:600px;
+    left:70%;
+    border-radius:9px;
+    border-spacing:5px;
+    background:repeating-linear-gradient(90deg,white 0%, green 100%);
+}
+
+.log {
+    position:absolute;
+    left:10%;
+
+}
+.user {
+    position:absolute;
+    top:20%;
+    left:10%;
+
+}
+
+.password {
+    position:absolute;
+    top:40%;
+    left:10%;
+
+}
+
+#sign {
+    position:absolute;
+    left:10%;
+    top:55%;
+}
+
+button {
+    width:162%;
+    height:25px;
+}
+
+.buts{
+   position:absolute;
+    left:9%;
+    top: 80%;
+    width: 106px;
+    height: 24px;
+}
+
+.sbuts{
+    position:absolute;
+    left:9%;
+    top: 94%;
+    width: 106px;
+    height: 24px;
+
+}
+
+
+input.a {
+            height:35px;
+            width:100%;
+            border:0;
+            outline:0;
+            padding:0px;
+            border-bottom:1px solid #00ff90;
+}
+
+.new {
+    position:absolute;
+    top:57%;
+    left:10%;
+}
+
+.captcha{
+    position:absolute;
+    top:70%;
+    left:10%;
+}
+
+#verify{
+    position:absolute;
+    top: 88%;
+    left:10%;
+
+}
+.gmail{
+    position:absolute;
+    left:50%;
+    top:65%;
+
+}
